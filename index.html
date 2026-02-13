@@ -383,11 +383,25 @@
 
         <div class="cat-ears">ᓚᘏᗢ</div>
         <h1>TRUE IMMORTAL DEMONS</h1>
+        
+        <!-- Toggle All Nicknames Button -->
+        <div style="text-align: center; margin: 20px 0;">
+            <button onclick="toggleAllNicknames()" style="
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff;
+                border: 2px solid #ffffff;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s;
+            ">Toggle All Nicknames</button>
+        </div>
 
         <!-- Home Page -->
         <div id="home" class="section-page active">
             <div class="members">
-                <div class="member-card nakar-bg" onclick="toggleNicknames('nakar')">
+                <div class="member-card nakar-bg">
                     <div class="member-name">Nakar</div>
                     <div id="nakar" class="nicknames">
                         <h3>Nicknames:</h3>
@@ -400,20 +414,20 @@
                     </div>
                 </div>
 
-                <div class="member-card kai-bg" onclick="toggleNicknames('kai')">
+                <div class="member-card kai-bg">
                     <div class="member-name">Kai</div>
                     <div id="kai" class="nicknames">
                         <h3>Nicknames:</h3>
                         <ul>
                              <li>Grasshoppers true love</li>
                             <li>Scary pvper</li>
-                            <li>Femboy gonner</li>
+                            <li>Femboy gooner</li>
                             <li>Freak master</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="member-card stupidly-bg" onclick="toggleNicknames('stupidly')">
+                <div class="member-card stupidly-bg">
                     <div class="member-name">Stupidly</div>
                     <div id="stupidly" class="nicknames">
                         <h3>Nicknames:</h3>
@@ -480,7 +494,7 @@ Tonight—two oh fucking zero AM, February twelfth, twenty twenty-six—The Cock
                 ========================================
                 -->
                 <p style="text-align: center; margin-top: 20px;">
-                
+                  
                 </p>
             </div>
         </div>
@@ -533,6 +547,13 @@ Tonight—two oh fucking zero AM, February twelfth, twenty twenty-six—The Cock
         function toggleNicknames(memberId) {
             const nicknamesDiv = document.getElementById(memberId);
             nicknamesDiv.classList.toggle('active');
+        }
+
+        function toggleAllNicknames() {
+            const allNicknames = document.querySelectorAll('.nicknames');
+            allNicknames.forEach(nicknamesDiv => {
+                nicknamesDiv.classList.toggle('active');
+            });
         }
 
         // Flash image function for hidden button
